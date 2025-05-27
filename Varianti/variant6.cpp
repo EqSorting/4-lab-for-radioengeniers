@@ -78,6 +78,9 @@ int main(){
     srand(time(0));
     cout << "Enter the size of the array: ";
     cin >> size;
+    if (size < 0){
+        cout << "Size should be positive" << endl;
+    }
     long double array[size];
     for (int i = 0; i < size; i++){
         array[i] = rand() % 20-10; 
