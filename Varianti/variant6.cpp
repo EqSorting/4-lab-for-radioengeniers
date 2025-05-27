@@ -4,7 +4,20 @@
 #include <ctime>
 using namespace std;
 
+void add(long double *array, int size){
+    for (int i = 0; i < size; i++){
+        array[i] = rand() % 20-10; 
+    }
+}
+
+void print(long double *array, int size){
+    cout << "Your array:" << endl;
+    for (int i = 0; i < size; i++){
+        cout << array[i] << " ";
+    }
+}
 void min_element(long double *array, int size){
+    cout << endl;
     int min = array[0];
     for (int i = 1; i < size; i++){
         if (array[i] < min) {
@@ -82,14 +95,8 @@ int main(){
         cout << "Size should be positive" << endl;
     }
     long double array[size];
-    for (int i = 0; i < size; i++){
-        array[i] = rand() % 20-10; 
-    }
-
-    for (int i = 0; i < size; i++){
-        std::cout << array[i] << " ";
-    }
-    cout << endl;
+    add(array, size);
+    print(array, size);
     min_element(array, size);
     sum_elements(array, size);
     sorting(array, size);
